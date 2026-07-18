@@ -64,7 +64,7 @@ export default function AddCoursePage() {
       if (!res.ok) throw new Error();
       toast.dismiss(loadingToast);
       toast.success("Course published successfully!");
-      router.push("/courses");
+      router.push("/allcourses");
     } catch {
       toast.dismiss(loadingToast);
       toast.error("Failed to publish course!");
