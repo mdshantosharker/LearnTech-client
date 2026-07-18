@@ -1,13 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import {
-  FaGraduationCap,
-  FaNetworkWired,
-  FaRocket,
-  FaShieldHalved,
-  FaArrowRight,
-} from "react-icons/fa6";
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
+const data = [
+  { month: "Jan", progress: 20 },
+  { month: "Feb", progress: 45 },
+  { month: "Mar", progress: 35 },
+  { month: "Apr", progress: 70 },
+  { month: "May", progress: 55 },
+  { month: "Jun", progress: 95 },
+];
 
 export default function AboutLearnTech() {
   const containerVariants = {
@@ -21,7 +33,55 @@ export default function AboutLearnTech() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0f1d] text-white pt-32 pb-20 px-6 overflow-hidden">
+    <div className="min-h-screen bg-[#0a0f1d] text-white pt-24 pb-20 px-6 overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="max-w-6xl mx-auto mb-20 bg-[#0d1326] p-6 md:p-10 rounded-[3rem] border border-white/5 shadow-2xl"
+      >
+        <div className="flex flex-col md:flex-row justify-between items-center mb-10">
+          <div>
+            <h3 className="text-2xl font-black">Engineering Velocity</h3>
+            <p className="text-gray-400 text-sm">
+              Real-time mastery growth metric
+            </p>
+          </div>
+          <div className="bg-[#00ffaa]/10 text-[#00ffaa] px-4 py-2 rounded-full text-xs font-bold mt-4 md:mt-0">
+            +95% IMPROVEMENT
+          </div>
+        </div>
+        <div className="h-75 w-full">
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart data={data}>
+              <defs>
+                <linearGradient id="colorProgress" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#00ffaa" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="#00ffaa" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" />
+              <XAxis dataKey="month" stroke="#666" fontSize={12} />
+              <YAxis stroke="#666" fontSize={12} />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#0a0f1d",
+                  border: "1px solid #333",
+                  borderRadius: "12px",
+                }}
+              />
+              <Area
+                type="monotone"
+                dataKey="progress"
+                stroke="#00ffaa"
+                strokeWidth={3}
+                fillOpacity={1}
+                fill="url(#colorProgress)"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
+      </motion.div>
+
       <div className="max-w-6xl mx-auto mb-32">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
@@ -57,96 +117,7 @@ export default function AboutLearnTech() {
         initial="hidden"
         whileInView="visible"
         className="max-w-6xl mx-auto grid md:grid-cols-2 gap-x-20 gap-y-24 mb-32"
-      >
-        {[
-          {
-            icon: <FaGraduationCap />,
-            title: "Precision Curriculum",
-            desc: "Curated modules that mirror actual production requirements, removing 90% of irrelevant theory.",
-          },
-          {
-            icon: <FaNetworkWired />,
-            title: "Collaborative Intelligence",
-            desc: "Learn by doing with PR-based code reviews and distributed team workflows, mirroring elite tech companies.",
-          },
-          {
-            icon: <FaRocket />,
-            title: "Accelerated Feedback",
-            desc: "Our automated telemetry engine provides instant analysis on your code quality, complexity, and performance.",
-          },
-          {
-            icon: <FaShieldHalved />,
-            title: "Production Hardening",
-            desc: "We teach security-first engineering. Master authentication, infrastructure-as-code, and resilient system design.",
-          },
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            variants={itemVariants}
-            className="group relative"
-          >
-            <div className="text-[#00ffaa] text-4xl mb-8 group-hover:scale-110 transition-transform">
-              {item.icon}
-            </div>
-            <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
-            <p className="text-gray-500 leading-relaxed text-lg">{item.desc}</p>
-            <div className="mt-8 h-0.5 w-12 bg-[#00ffaa]/30 group-hover:w-24 transition-all duration-500" />
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <div className="max-w-5xl mx-auto bg-[#0d1326] rounded-[3rem] lg:p-16 border border-white/5 shadow-[0_0_100px_rgba(0,255,170,0.03)]">
-        <h2 className="text-4xl font-black mb-16 text-center">
-          Why we are different?
-        </h2>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            {[
-              "Real-world architectural constraints.",
-              "Mentorship from FAANG-tier engineers.",
-              "AI-assisted code analysis tools.",
-              "Live production-grade projects.",
-            ].map((text, idx) => (
-              <div
-                key={idx}
-                className="flex items-center gap-4 text-xl font-bold"
-              >
-                <div className="w-6 h-6 rounded-full bg-[#00ffaa]/10 flex items-center justify-center text-[#00ffaa] text-xs">
-                  ✓
-                </div>
-                {text}
-              </div>
-            ))}
-          </div>
-          <div className="bg-[#0a0f1d] p-10 rounded-2xl border border-white/5 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-[#00ffaa] to-[#00aaff]" />
-            <p className="text-xl leading-relaxed text-gray-400 mb-8">
-              LearnTech was not just a course, it was a career pivot. I went
-              from tutorial hell to leading my team iss migration to a
-              microservices architecture in under 6 months.
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-white/5" />
-              <div>
-                <h5 className="font-bold text-white">Shanto</h5>
-                <p className="text-[#00ffaa] text-xs uppercase font-black">
-                  Senior Engineering Lead
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto mt-32 text-center">
-        <h3 className="text-5xl font-black mb-10">
-          Ready to break the ceiling?
-        </h3>
-        <button className="group bg-white text-[#0a0f1d] px-12 py-6 rounded-2xl font-black text-lg hover:bg-[#00ffaa] transition-all flex items-center gap-3 mx-auto">
-          Start Mastering{" "}
-          <FaArrowRight className="group-hover:translate-x-2 transition-transform" />
-        </button>
-      </div>
+      ></motion.div>
     </div>
   );
 }

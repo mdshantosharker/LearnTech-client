@@ -76,7 +76,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/signup"
-                  className="px-5 py-2 bg-[#00ffaa] text-black text-sm font-bold rounded-full hover:bg-white transition-all shadow-[0_0_10px_rgba(0,255,170,0.3)]"
+                  className="px-5 py-2 bg-[#00ffaa] text-black text-sm font-bold rounded-full hover:bg-white transition-all"
                 >
                   Sign Up
                 </Link>
@@ -105,15 +105,16 @@ export default function Navbar() {
         </nav>
       </header>
 
+     
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden fixed inset-0 z-30 pt-24 px-6 bg-[#0a0f1d]/95 backdrop-blur-lg"
+            className="lg:hidden fixed inset-0 z-30 pt-24 px-6 bg-[#0a0f1d]/95 backdrop-blur-lg flex flex-col items-center"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 w-full max-w-xs text-center">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -124,52 +125,37 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
+
+           
+              {!user ? (
+                <div className="flex flex-col gap-4 mt-4">
+                  <Link
+                    href="/login"
+                    onClick={() => setIsOpen(false)}
+                    className="text-white text-xl font-bold"
+                  >
+                    Log In
+                  </Link>
+                  <Link
+                    href="/signup"
+                    onClick={() => setIsOpen(false)}
+                    className="px-5 py-3 bg-[#00ffaa] text-black font-bold rounded-full"
+                  >
+                    Sign Up
+                  </Link>
+                </div>
+              ) : (
+                <button
+                  onClick={() => {
+                    setShowLogoutModal(true);
+                    setIsOpen(false);
+                  }}
+                  className="text-rose-400 text-xl font-bold flex items-center justify-center gap-2 mt-4"
+                >
+                  <FaSignOutAlt /> Log Out
+                </button>
+              )}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {showLogoutModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-            <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              className="bg-[#0a0f1d] border border-white/20 p-6 rounded-3xl w-full max-w-sm text-center"
-            >
-              <h3 className="text-white text-xl font-bold mb-2">Sign Out</h3>
-              <p className="text-gray-400 text-sm mb-6">
-                Are you sure you want to log out?
-              </p>
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setShowLogoutModal(false)}
-                  className="flex-1 py-2 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={confirmLogout}
-                  className="flex-1 py-2 rounded-xl bg-rose-600 text-white font-bold hover:bg-rose-500"
-                >
-                  Yes, Logout
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {notification && (
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 50, opacity: 0 }}
-            className="fixed bottom-10 left-1/2 -translate-x-1/2 bg-[#00ffaa] text-black px-6 py-3 rounded-full font-bold shadow-xl z-50"
-          >
-            {notification}
           </motion.div>
         )}
       </AnimatePresence>
