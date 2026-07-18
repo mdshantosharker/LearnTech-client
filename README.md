@@ -1,4 +1,4 @@
-# 🚀 DevScouT – Find & Hire Professional Developers
+# 🚀 LearnTech -- AI Powered Learning Platform
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" />
@@ -14,266 +14,409 @@
 A modern Full Stack Developer Marketplace built with Next.js, TypeScript, Express.js, and MongoDB. DevScouT helps users discover, explore, and manage professional developer profiles through a clean, responsive, and production-ready interface.
 </p>
 
----
+
+------------------------------------------------------------------------
 
 # 🌐 Live Website
 
-### 🔗 https://dev-scout-client.vercel.app
+### 🔗 https://learn-tech-client.vercel.app/
 
----
+------------------------------------------------------------------------
 
 # 📂 GitHub Repositories
 
 ### 💻 Client
 
-https://github.com/mdshantosharker/DevScout-Client
+https://github.com/mdshantosharker/LearnTech-client
 
 ### ⚙️ Server
 
-https://github.com/mdshantosharker/DevScout-Server
+https://github.com/mdshantosharker/LearnTech-server
 
----
-
----
+------------------------------------------------------------------------
 
 # ✨ Features
 
 ## 🌍 Public Features
 
-- Beautiful Landing Page
-- Fully Responsive Design
-- Sticky Navigation Bar
-- Dynamic Hero Section
-- Featured Developers Section
-- Search Developers
-- Advanced Filtering
-- Sorting Options
-- Pagination
-- Developer Details Page
-- About Page
-- Contact Page
-- Clean Footer
-- Loading Skeleton
-- Modern UI & Animations
+-   Modern Landing Page
+-   Fully Responsive Design
+-   Sticky Responsive Navbar
+-   Interactive Hero Section
+-   Course Listing Section
+-   Course Details Page
+-   Search Courses
+-   Advanced Filtering
+-   Sorting Options
+-   Pagination
+-   Category Based Browsing
+-   About Page
+-   Contact Page
+-   FAQ / Support Section
+-   Professional Footer
+-   Loading Skeleton
+-   Modern Animations
 
----
+------------------------------------------------------------------------
 
-## 🔐 Authentication
+# 🔐 Authentication
 
-- Email & Password Login
-- Secure Registration
-- Protected Routes
-- Session Based Authentication
-- Logout
-- Form Validation
-- Error Handling
-- Demo Friendly Authentication Flow
+-   Secure Login System
+-   Registration System
+-   JWT Authentication / Secure Auth System
+-   Protected Routes
+-   Google Social Login
+-   Demo Login Button
+-   Form Validation
+-   Error Handling
+-   Session Management
 
----
+------------------------------------------------------------------------
 
-# 📊 Application Highlights
+# 📚 Learning Platform Features
 
-- Production Ready Architecture
-- TypeScript Frontend & Backend
-- REST API
-- Responsive Layout
-- Component Based Design
-- Reusable UI Components
-- Clean Folder Structure
-- Loading Skeleton
-- Search
-- Filter
-- Sort
-- Pagination
-- Protected Routes
-- MongoDB Integration
+## Course Management
 
----
+-   Add New Courses
+-   Course Title
+-   Short Description
+-   Full Description
+-   Price Management
+-   Category Selection
+-   Level Selection
+-   Image URL Support
+-   Course Details View
 
-## Features
+------------------------------------------------------------------------
 
-### Add Developer
+## Manage Courses
 
-- Add New Developer
-- Upload Image URL
-- Set Developer Price
-- Priority Selection
-- Short Description
-- Full Description
+-   View All Courses
+-   Manage User Created Courses
+-   Delete Courses
+-   Responsive Management Interface
+-   Clean Table/Card Layout
 
-### Manage Developers
+------------------------------------------------------------------------
 
-- View Developer
-- Delete Developer
-- Responsive Table
-- Clean UI
+# 🤖 AI Features
 
----
+LearnTech integrates AI capabilities using an LLM provider.
 
-# 🛠 Tech Stack
+## AI Content Generator
+
+Generate high-quality educational content from structured input.
+
+Features:
+
+-   Custom AI Prompt Templates
+-   Course Content Generation
+-   Article / Blog Generation
+-   Documentation Generation
+-   Adjustable Output Length
+-   Regenerate AI Response
+-   Context Aware Responses
+
+------------------------------------------------------------------------
+
+## AI Learning Assistant
+
+Features:
+
+-   Answer User Questions
+-   Understand Conversation Context
+-   Maintain Conversation History
+-   Provide Follow-up Suggestions
+-   Intelligent Learning Support
+
+------------------------------------------------------------------------
+
+# 🛠 Technology Stack
 
 ## Frontend
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS
-- HeroUI
-- Framer Motion
-- React Icons
+-   Next.js
+-   React.js
+-   TypeScript
+-   Tailwind CSS
+-   TanStack Query / RTK Query
+-   HeroUI
+-   Framer Motion
+-   Recharts / Chart.js
+-   React Icons
 
----
+------------------------------------------------------------------------
 
 ## Backend
 
-- Node.js
-- Express.js
-- TypeScript
-- MongoDB
-- CORS
-- Dotenv
+-   Node.js
+-   Express.js
+-   TypeScript
+-   MongoDB
+-   JWT Authentication
+-   CORS
+-   Dotenv
 
----
+------------------------------------------------------------------------
 
-## Database
+## AI Integration
 
-- MongoDB Atlas
+Supported LLM Providers:
 
----
+-   Gemini
+-   OpenAI
+-   Claude
+-   Groq
+-   Together AI
+-   Ollama
+-   Hugging Face Inference API
+
+------------------------------------------------------------------------
+
+# 📊 Application Highlights
+
+-   Production Ready Architecture
+-   TypeScript Frontend & Backend
+-   REST API
+-   AI Powered Features
+-   Secure Authentication
+-   Responsive UI
+-   Component Based Architecture
+-   Reusable Components
+-   Clean Folder Structure
+-   Search
+-   Filter
+-   Sort
+-   Pagination
+-   MongoDB Integration
+
+------------------------------------------------------------------------
+
+# 🏠 Home Page Sections
+
+The landing page contains:
+
+-   Navbar
+-   Hero Section
+-   Features Section
+-   Course Categories
+-   Learning Statistics
+-   Popular Courses
+-   AI Features Showcase
+-   Testimonials
+-   FAQ
+-   Newsletter
+-   Call To Action
+-   Footer
+
+------------------------------------------------------------------------
+
+# 📦 Core Listing / Course Cards
+
+Each card includes:
+
+-   Course Image
+-   Course Title
+-   Short Description
+-   Price
+-   Category
+-   Level
+-   View Details Button
+
+Card Features:
+
+-   Same Card Size
+-   Consistent Design
+-   Responsive Layout
+-   Desktop 4 Column Grid
+-   Skeleton Loader
+
+------------------------------------------------------------------------
+
+# 📄 Pages
+
+## Public Pages
+
+-   Home
+-   Explore Courses
+-   Course Details
+-   About
+-   Contact
+-   Login
+-   Register
+
+------------------------------------------------------------------------
+
+## Protected Pages
+
+-   Add Course (/items/add)
+-   Manage Courses (/items/manage)
+-   AI Content Generator
+-   AI Learning Assistant Dashboard
+
+------------------------------------------------------------------------
+
+# 🔍 Explore Course Page
+
+Features:
+
+-   Search Bar
+-   Category Filter
+-   Price Filter
+-   Level Filter
+-   Sorting System
+-   Pagination
+-   Fully Functional Filtering
+
+------------------------------------------------------------------------
+
+# ➕ Add Course Page
+
+Protected Route:
+
+Only authenticated users can access.
+
+Form Fields:
+
+-   Title
+-   Short Description
+-   Full Description
+-   Price
+-   Category
+-   Level
+-   Image URL
+-   Submit Button
+
+------------------------------------------------------------------------
+
+# 📋 Manage Course Page
+
+Features:
+
+-   Course List Table/Grid
+-   View Course
+-   Delete Course
+-   Responsive Design
+-   Clean Management UI
+
+------------------------------------------------------------------------
 
 # 📁 Project Structure
 
-```
-DevScouT
-│
-├── client
-│   ├── app
-│   ├── components
-│   ├── hooks
-│   ├── lib
-│   ├── providers
-│   └── types
-│
-├── server
-│   ├── routes
-│   ├── middleware
-│   ├── database
-│   ├── config
-│   └── index.ts
-```
+    LearnTech
+    │
+    ├── client
+    │   ├── app
+    │   ├── components
+    │   ├── hooks
+    │   ├── lib
+    │   ├── providers
+    │   └── types
+    │
+    ├── server
+    │   ├── routes
+    │   ├── middleware
+    │   ├── database
+    │   ├── config
+    │   └── index.ts
 
----
+------------------------------------------------------------------------
 
 # 🚀 Installation
 
 ## Clone Repository
 
-```bash
-git clone https://github.com/mdshantosharker/DevScout-Client
+``` bash
+git clone https://github.com/mdshantosharker/LearnTech-client
 ```
 
-```bash
-git clone https://github.com/mdshantosharker/DevScout-Server
+``` bash
+git clone https://github.com/mdshantosharker/LearnTech-server
 ```
 
----
+------------------------------------------------------------------------
 
-## Client Setup
+# Client Setup
 
-```bash
-cd DevScout-Client
+``` bash
+cd LearnTech-client
 ```
 
-Install Packages
+Install Packages:
 
-```bash
+``` bash
 npm install
 ```
 
-Run Development Server
+Run Development Server:
 
-```bash
+``` bash
 npm run dev
 ```
 
----
+------------------------------------------------------------------------
 
-## Server Setup
+# Server Setup
 
-```bash
-cd DevScout-Server
+``` bash
+cd LearnTech-server
 ```
 
-Install Packages
+Install Packages:
 
-```bash
+``` bash
 npm install
 ```
 
-Run Server
+Run Server:
 
-```bash
+``` bash
 npm run dev
 ```
 
----
+------------------------------------------------------------------------
 
 # ⚙️ Environment Variables
 
 ## Client
 
-```env
+``` env
 NEXT_PUBLIC_SERVER_URL=http://localhost:5000
 ```
 
----
+------------------------------------------------------------------------
 
 ## Server
 
-```env
+``` env
 PORT=5000
-MONGODB_URI=Your mongodb uri
+MONGODB_URI=Your_MongoDB_URI
+JWT_SECRET=Your_JWT_SECRET
+AI_API_KEY=Your_AI_API_KEY
 ```
 
----
+------------------------------------------------------------------------
 
-# 📄 Pages
+# 🌐 UI & Design Rules Followed
 
-### Public
+-   Maximum 3 Primary Colors
+-   Consistent Layout System
+-   Same Card Design
+-   Responsive Mobile, Tablet & Desktop
+-   No Dummy Content
+-   Clean Professional Interface
 
-- Home
-- Explore Developers
-- Developer Details
-- About
-- Contact
-- Login
-- Register
-
----
-
-### Protected
-
-- Add Developer
-- Manage Developers
-
----
+------------------------------------------------------------------------
 
 # 👨‍💻 Author
 
 ## Md Shanto Sharkar
 
-### Full-Stack Developer
+Full Stack Developer
 
-GitHub
+GitHub: https://github.com/mdshantosharker
 
-https://github.com/mdshantosharker
+LinkedIn: https://www.linkedin.com/in/md-shanto-sharkar
 
-LinkedIn
+------------------------------------------------------------------------
 
-https://www.linkedin.com/in/md-shanto-sharkar
-
----
-
-<p align="center">
-Made with  using Next.js, TypeScript, Express.js & MongoDB
-</p>
