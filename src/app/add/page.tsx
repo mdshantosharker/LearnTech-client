@@ -52,9 +52,17 @@ export default function AddCoursePage() {
     const loadingToast = toast.loading("Deploying course...");
 
     try {
+      // Fetch JWT token from local Next.js API
+      const jwtRes = await fetch("/api/jwt");
+      if (!jwtRes.ok) throw new Error("Auth token retrieval failed");
+      const { token } = await jwtRes.json();
+
       const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/courses`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
         body: JSON.stringify({
           ...formData,
           price: parseFloat(formData.price),
