@@ -100,7 +100,7 @@ export default function ManageItemsPage() {
             <table className="w-full text-left border-collapse">
               <thead className="bg-[#1a2333] border-b border-white/10">
                 <tr>
-                  <th className="p-4">#</th>
+                  <th className="p-4">No</th>
                   <th className="p-4">Item Name</th>
                   <th className="p-4">Category</th>
                   <th className="p-4">Price</th>

@@ -12,6 +12,39 @@ import {
 } from "react-icons/fa6";
 import { HiOutlineMail } from "react-icons/hi";
 
+const socialLinks = [
+  {
+    icon: <FaXTwitter size={18} />,
+    href: "https://x.com/MSharkar56587",
+    label: "Twitter",
+  },
+  {
+    icon: <FaInstagram size={18} />,
+    href: "https://www.instagram.com/mdshantosharkar",
+    label: "Instagram",
+  },
+  {
+    icon: <FaLinkedinIn size={18} />,
+    href: "https://www.linkedin.com/in/md-shanto-sharkar",
+    label: "LinkedIn",
+  },
+  {
+    icon: <FaGithub size={18} />,
+    href: "https://github.com/mdshantosharker",
+    label: "GitHub",
+  },
+  {
+    icon: <FaDiscord size={18} />,
+    href: "https://discord.com/invite/mdshantosharker5624",
+    label: "Discord",
+  },
+  {
+    icon: <HiOutlineMail size={20} />,
+    href: "mailto:support@devscout.com",
+    label: "Email",
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="relative w-full pt-20 pb-10 px-6 bg-linear-to-b from-[#0a0f1d] via-[#022922] to-[#011815]">
@@ -70,21 +103,17 @@ export default function Footer() {
               Connect
             </h4>
             <div className="flex flex-wrap gap-3">
-              {[
-                FaXTwitter,
-                FaInstagram,
-                FaLinkedinIn,
-                FaGithub,
-                FaDiscord,
-                HiOutlineMail,
-              ].map((Icon, i) => (
-                <motion.button
+              {socialLinks.map((social, i) => (
+                <motion.a
                   key={i}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   className="w-10 h-10 rounded-full bg-[#00ffaa]/10 border border-[#00ffaa]/30 text-[#00ffaa] hover:bg-[#00ffaa] hover:text-black flex items-center justify-center transition-all"
                 >
-                  <Icon size={18} />
-                </motion.button>
+                  {social.icon}
+                </motion.a>
               ))}
             </div>
           </div>

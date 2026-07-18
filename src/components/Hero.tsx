@@ -62,7 +62,7 @@ export default function Hero() {
           className="flex flex-wrap justify-center gap-4"
         >
           <Link
-            href="/all-courses"
+            href="/allcourses"
             className="group px-8 py-3.5 bg-[#00ffaa] text-[#0a0f1d] font-bold rounded-full hover:bg-white transition-all shadow-[0_0_20px_rgba(0,255,170,0.2)] flex items-center gap-2 whitespace-nowrap"
           >
             Explore Courses
